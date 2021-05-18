@@ -14,7 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewuserComponent } from './components/newuser/newuser.component';
 import { PostsModule } from './modules/posts.module';
 import { AlbumsModule } from './modules/albums.module';
-import {NgxPaginationModule} from 'ngx-pagination';
+//import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     HttpClientModule,
     PostsModule,
     AlbumsModule,
-    NgxPaginationModule
+    //NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

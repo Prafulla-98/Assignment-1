@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Photo } from '../Photo';
+import { Photo } from '../model/photo';
 
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
-  styleUrls: ['./album.component.scss']
+  styleUrls: ['./album.component.css']
 })
 export class AlbumComponent implements OnInit {
   

@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { User } from './User';
+import { User } from './models/User';
 
 @Component({
   selector: 'app-home',

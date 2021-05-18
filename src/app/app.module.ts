@@ -13,7 +13,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewuserComponent } from './components/newuser/newuser.component';
 //import { PostsModule } from './posts/posts.module';
-import { AlbumsModule } from './components/albums/albums.module';
+import { AlbumsModule } from './modules/albums.module';
 
 @NgModule({
   declarations: [

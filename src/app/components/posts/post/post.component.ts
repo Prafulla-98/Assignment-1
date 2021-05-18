@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Post } from '../Post';
+import { Post } from '../model/Post';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss']
+  styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
 

@@ -10,6 +10,10 @@ import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
 import { GeocolorDirective } from './geocolor.directive';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NewuserComponent } from './components/newuser/newuser.component';
+//import { PostsModule } from './posts/posts.module';
+import { AlbumsModule } from './components/albums/albums.module';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,17 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     HomeComponent,
     UserComponent,
     GeocolorDirective,
-    EditUserComponent
+    EditUserComponent,
+    NavbarComponent,
+    NewuserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    //PostsModule,
+    AlbumsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

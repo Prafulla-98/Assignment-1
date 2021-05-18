@@ -1,0 +1,70 @@
+<form class="form-horizontal" [formGroup]="userForm">
+    <div>
+        Name*:
+        <input type="text" class="form-control" id="name" formControlName="name">
+            <small *ngIf="!userForm.controls.name.valid" class="text-danger">
+                Name is required.
+            </small>
+        
+    </div>
+    <div>
+        Phone:         
+            <input type="text" class="form-control" id="phone" formControlName="phone"
+            pattern="[- +()0-9]+">
+        
+    </div>
+    <div >
+       Email:
+            <input type="text" class="form-control" id="email" formControlName="email">
+    </div>
+    <div>
+        Gender: 
+        <input type="radio" id="male" name="gender" value="male" formControlName="gender">
+<label for="male">Male</label><br>
+<input type="radio" id="female" name="gender" value="female" formControlName="gender">
+<label for="female">Female</label><br>
+<input type="radio" id="other" name="gender" value="other" formControlName="gender">
+<label for="other">Other</label>
+    </div>
+    <div formArrayName="addresses">
+        <div *ngFor="let address of userForm.get('addresses')['controls']; let i=index">
+            <div>
+                <br>
+                <span>Address {{i + 1}}</span>
+            </div>
+
+            <div [formGroupName]="i">
+                <div>
+                    Door No: 
+                    <input type="text" class="form-control" formControlName="doorNo">
+                </div>
+                <div>
+                    Street: 
+                    <input type="text" class="form-control" formControlName="street">
+                </div>
+                <div>
+                   Area: 
+                    <input type="text" class="form-control" formControlName="area">
+                </div>
+                <div>
+                    City: 
+                    <input type="text" class="form-control" formControlName="city">
+                </div>
+                <div>
+                   Pin: 
+                    <input type="text" class="form-control" formControlName="pin" pattern="[- 0-9]+">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <button (click)="addAddress()" class="submit-btn btn btn-primary">Add Address</button>
+    </div>
+    <br>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button (click)="saveUser()" class="submit-btn btn btn-primary">Add User</button>
+        </div>
+    </div>
+</form>

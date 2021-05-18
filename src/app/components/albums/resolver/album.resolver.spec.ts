@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AlbumResolver } from './album.resolver';
+import { AlbumResolver } from '../album.resolver';
 
 describe('AlbumResolver', () => {
   let resolver: AlbumResolver;

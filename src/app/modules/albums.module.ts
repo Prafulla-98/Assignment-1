@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AlbumsComponent } from '../components/albums/albums/albums.component';
 import { AlbumComponent } from '../components/albums/photo/album.component';
-import { AlbumResolver } from '../components/albums/album.resolver';
+import { AlbumResolver } from '../components/albums/resolver/album.resolver';
 import { AlbumService } from '../components/albums/service/albums.service';
 
 

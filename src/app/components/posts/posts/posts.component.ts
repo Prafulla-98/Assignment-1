@@ -13,6 +13,8 @@ export class PostsComponent implements OnInit {
 
   posts$: Observable<Post[]>;
   posts: Post[];
+  totalLength: number;
+  page: number = 1;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -20,6 +22,7 @@ export class PostsComponent implements OnInit {
     this.posts$ = this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
     this.posts$.subscribe(p => {
       this.posts = p as Post[];
+      this.totalLength=this.posts.length;
     });
   }
 

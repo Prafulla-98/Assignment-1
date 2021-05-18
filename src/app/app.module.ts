@@ -12,8 +12,9 @@ import { GeocolorDirective } from './geocolor.directive';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewuserComponent } from './components/newuser/newuser.component';
-//import { PostsModule } from './posts/posts.module';
+import { PostsModule } from './modules/posts.module';
 import { AlbumsModule } from './modules/albums.module';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -25,14 +26,16 @@ import { AlbumsModule } from './modules/albums.module';
     EditUserComponent,
     NavbarComponent,
     NewuserComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    //PostsModule,
-    AlbumsModule
+    PostsModule,
+    AlbumsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

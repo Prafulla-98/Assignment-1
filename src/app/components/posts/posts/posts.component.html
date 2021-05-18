@@ -2,8 +2,14 @@
     <h1>All Posts</h1>
 
     <ul>
-        <li *ngFor="let post of (posts$ | async)">
+        <li *ngFor="let post of (posts$ | async | 
+        paginate: { 
+            itemsPerPage: 10, 
+            currentPage: page,
+            totalItems: totalLength
+        })">
             {{ post.title }} <button type="button" class="btn btn-primary" (click)="getLink(post.id)">More Info</button>
         </li>
     </ul>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PostComponent } from "../components/posts/post/post.component";
 import { PostsComponent } from '../components/posts/posts/posts.component';
 import { RouterModule } from '@angular/router';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -13,6 +14,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    NgxPaginationModule,
     RouterModule.forRoot([
       {
         path: 'posts',

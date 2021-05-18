@@ -5,16 +5,17 @@ import { AlbumsComponent } from '../components/albums/albums/albums.component';
 import { AlbumComponent } from '../components/albums/photo/album.component';
 import { AlbumResolver } from '../components/albums/resolver/album.resolver';
 import { AlbumService } from '../components/albums/service/albums.service';
-
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     AlbumsComponent,
-    AlbumComponent
+    AlbumComponent,
+    
   ],
   imports: [
     CommonModule,
+    NgxPaginationModule,
     RouterModule.forRoot([
       {
         path: 'albums',

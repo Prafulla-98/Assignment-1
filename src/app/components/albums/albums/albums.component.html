@@ -2,8 +2,15 @@
     <h1>All Albums</h1>
 
     <ul>
-        <li *ngFor="let album of (albums$ | async)">
+        <li *ngFor="let album of (albums$ | async) | 
+        paginate: { 
+            itemsPerPage: 10, 
+            currentPage: page,
+            totalItems: totalLength
+        }
+        ">
             {{ album.title }} <button type="button" class="btn btn-primary" (click)="getLink(album.id)">More Info</button>
         </li>
     </ul>
+ <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>

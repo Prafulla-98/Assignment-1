@@ -1,17 +1,19 @@
- <div style="margin-left: 550px;">
+ <div class="login">
     <h2>Login</h2>
 
     <form #f="ngForm" [formGroup]="loginForm" (ngSubmit)="CheckUser(f)">
-        
-        Username: 
-    <input type="text" id="username" name="username" formControlName="username"/>
-    <br/>
-    <br>
-    Password:
+        <div class="username">
+            Username: 
+            <input type="text" id="username" name="username" formControlName="username"/>
+        </div>
+       
+    <div class="password">
+        Password:
     <input type="password" id="password" name="password" formControlName="password"/>
-    <br/>
-    <br/>
-    <div>
+    </div>
+    
+    
+    <div class="button">
     <button type="submit">Login</button>
 </div>
 </form>

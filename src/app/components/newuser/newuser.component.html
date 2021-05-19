@@ -20,16 +20,16 @@
     <div>
         Gender: 
         <input type="radio" id="male" name="gender" value="male" formControlName="gender">
-<label for="male">Male</label><br>
+<label for="male">Male</label>
 <input type="radio" id="female" name="gender" value="female" formControlName="gender">
-<label for="female">Female</label><br>
+<label for="female">Female</label>
 <input type="radio" id="other" name="gender" value="other" formControlName="gender">
 <label for="other">Other</label>
     </div>
     <div formArrayName="addresses">
         <div *ngFor="let address of userForm.get('addresses')['controls']; let i=index">
             <div>
-                <br>
+                
                 <span>Address {{i + 1}}</span>
             </div>
 
@@ -57,11 +57,11 @@
             </div>
         </div>
     </div>
-    <br>
+    
     <div>
         <button (click)="addAddress()" class="submit-btn btn btn-primary">Add Address</button>
     </div>
-    <br>
+    
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button (click)="saveUser()" class="submit-btn btn btn-primary">Add User</button>

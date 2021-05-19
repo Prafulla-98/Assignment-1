@@ -14,7 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewuserComponent } from './components/newuser/newuser.component';
 import { PostsModule } from './modules/posts.module';
 import { AlbumsModule } from './modules/albums.module';
-//import {NgxPaginationModule} from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { AlbumsModule } from './modules/albums.module';
     GeocolorDirective,
     EditUserComponent,
     NavbarComponent,
-    NewuserComponent,
+    NewuserComponent
     
   ],
   imports: [
@@ -34,8 +34,7 @@ import { AlbumsModule } from './modules/albums.module';
     ReactiveFormsModule,
     HttpClientModule,
     PostsModule,
-    AlbumsModule,
-    //NgxPaginationModule
+    AlbumsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

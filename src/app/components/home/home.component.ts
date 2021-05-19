@@ -25,4 +25,10 @@ export class HomeComponent implements OnInit {
     
     this.router.navigateByUrl('/editUser', { state: { userData: value } });
   }
+
+  addUser(value1)
+  {
+    this.router.navigateByUrl('/editUser', { state: { userData: value1 } });
+
+  }
 }

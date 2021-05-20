@@ -4,13 +4,14 @@ import { PostComponent } from "../components/posts/post/post.component";
 import { PostsComponent } from '../components/posts/posts/posts.component';
 import { RouterModule } from '@angular/router';
 import {NgxPaginationModule} from 'ngx-pagination';
-
+import { PaginationComponent } from "../components/pagination/pagination.component";
 
 
 @NgModule({
   declarations: [
     PostComponent,
-    PostsComponent
+    PostsComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,

@@ -15,7 +15,8 @@ export class PostsComponent implements OnInit {
   posts: Post[];
   totalLength: number;
   page: number = 1;
-
+  activePage:number = 0;
+  
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
@@ -31,4 +32,7 @@ export class PostsComponent implements OnInit {
     this.router.navigate(['posts/'+value], {state: {data: this.posts[id]}});
   }
 
+  displayActivePage(activePageNumber:number){  
+    this.activePage = activePageNumber  
+  } 
 }

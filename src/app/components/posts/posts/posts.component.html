@@ -11,5 +11,12 @@
             {{ post.title }} <button type="button" class="btn btn-primary" (click)="getLink(post.id)">More Info</button>
         </li>
     </ul>
-    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    
+
+      
+<div>  
+      
+          <app-pagination [totalRecords]="this.totalLength" [recordsPerPage]="10" (onPageChange)="page = $event"></app-pagination>     
+     
+</div>  
 </div>

@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewuserComponent } from './components/newuser/newuser.component';
 import { PostsModule } from './modules/posts.module';
 import { AlbumsModule } from './modules/albums.module';
+//import { PaginationComponent } from './components/pagination/pagination.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AlbumsModule } from './modules/albums.module';
     GeocolorDirective,
     EditUserComponent,
     NavbarComponent,
-    NewuserComponent
+    NewuserComponent,
+    //PaginationComponent
     
   ],
   imports: [

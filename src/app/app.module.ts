@@ -27,7 +27,8 @@ import {MatCardModule} from '@angular/material/card';
 import { MatSortModule } from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
 import { AuthguardService } from './authguard.service';
-
+import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
 
   declarations: [
@@ -39,7 +40,8 @@ import { AuthguardService } from './authguard.service';
     GeocolorDirective,
     EditUserComponent,
     NavbarComponent,
-    NewuserComponent
+    NewuserComponent,
+    DialogBoxComponent
     
   ],
   imports: [
@@ -60,7 +62,8 @@ import { AuthguardService } from './authguard.service';
     MatTableModule,
     MatCardModule,
     MatSortModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]

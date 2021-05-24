@@ -1,0 +1,20 @@
+<mat-dialog-content>
+    <div><b>Id:</b> {{data.id}}</div>
+    <div><b>Name:</b> {{data.name}}</div>
+    <div><b>Username:</b> {{data.username}}</div>  
+    <div><b>Email:</b> {{data.email}}</div>
+    <div><b>Street:</b> {{data.address.street}}</div>
+    <div><b>Suite:</b> {{data.address.suite}}</div>
+    <div><b>City:</b> {{data.address.city}}</div>
+    <div><b>Zipcode:</b> {{data.address.zipcode}}</div>
+    <div><b>Latitude:</b> {{data.address.geo.lat}}</div>
+    <div><b>Longitude:</b> {{data.address.geo.lng}}</div>
+    <div><b>Phone:</b> {{data.phone}}</div>
+    <div><b>Website:</b> {{data.website}}</div>
+    <div><b>Company Name:</b> {{data.company.name}}</div>
+    <div><b>Catch Phrase:</b> {{data.company.catchPhrase}}</div>
+    <div><b>BS:</b> {{data.company.bs}}</div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-stroked-button mat-dialog-close (click)="navigate()">Okay</button>
+</mat-dialog-actions>

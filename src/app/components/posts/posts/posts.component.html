@@ -1,7 +1,21 @@
-<div class="posts">
-    <h1>All Posts</h1>
 
-    <ul>
+<div class="posts">
+    <h1 style="padding-left: 500px;">All Posts</h1>
+    <div *ngIf="isLoading"><mat-spinner></mat-spinner></div>
+    <mat-card class="typography" *ngFor="let post of (posts$ | async | 
+    paginate: { 
+        itemsPerPage: 10, 
+        currentPage: page,
+        totalItems: totalLength
+    })"> 
+    <mat-card-content >
+        {{ post.title }}    
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-stroked-button type="button" class="primary" (click)="getLink(post.id)">More Info</button>
+    </mat-card-actions>
+</mat-card>
+    <!-- <ul>
         <li *ngFor="let post of (posts$ | async | 
         paginate: { 
             itemsPerPage: 10, 
@@ -10,13 +24,17 @@
         })">
             {{ post.title }} <button type="button" class="btn btn-primary" (click)="getLink(post.id)">More Info</button>
         </li>
-    </ul>
+    </ul> -->
     
 
       
 <div>  
-      
+    <!-- <mat-paginator [length]="this.totalLength"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    [pageIndex]="this.activePage" (page)="pageEvent = handlePage($event)">
+</mat-paginator> -->
           <app-pagination [totalRecords]="this.totalLength" [recordsPerPage]="10" (onPageChange)="page = $event"></app-pagination>     
      
 </div>  
-</div>
+

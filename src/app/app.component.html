@@ -1,6 +1,25 @@
-<app-navbar></app-navbar>
+
+<!-- 
 <div class="container">
   
   
   <router-outlet></router-outlet>
-</div>
+</div> -->
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #side mode="side" closed>
+    <button mat-button routerLink="./" routerLinkActive="active" color="primary">  Login</button>
+    
+  
+      <button mat-button routerLink="../posts" routerLinkActive="active" color="primary">Posts</button>
+       <button mat-button routerLink="../albums" routerLinkActive="active" color="primary">Albums</button>
+       <button mat-button routerLink="../newUser" routerLinkActive="active" color="primary">Add New User</button>
+      
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button mat-button (click)="side.toggle()">
+      <mat-icon>list</mat-icon>
+    </button>
+   <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -14,11 +14,24 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewuserComponent } from './components/newuser/newuser.component';
 import { PostsModule } from './modules/posts.module';
 import { AlbumsModule } from './modules/albums.module';
-//import { PaginationComponent } from './components/pagination/pagination.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import { MatSidenavModule  } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+import { MatSortModule } from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
+import { AuthguardService } from './authguard.service';
 
 @NgModule({
+
   declarations: [
+    
     AppComponent,
     LoginComponent,
     HomeComponent,
@@ -26,8 +39,7 @@ import { AlbumsModule } from './modules/albums.module';
     GeocolorDirective,
     EditUserComponent,
     NavbarComponent,
-    NewuserComponent,
-    //PaginationComponent
+    NewuserComponent
     
   ],
   imports: [
@@ -36,9 +48,21 @@ import { AlbumsModule } from './modules/albums.module';
     ReactiveFormsModule,
     HttpClientModule,
     PostsModule,
-    AlbumsModule
+    AlbumsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatProgressSpinnerModule,
+    MatTableModule,
+    MatCardModule,
+    MatSortModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,6 +6,10 @@ import { AlbumComponent } from '../components/albums/photo/album.component';
 import { AlbumResolver } from '../components/albums/resolver/album.resolver';
 import { AlbumService } from '../components/albums/service/albums.service';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -16,6 +20,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
   imports: [
     CommonModule,
     NgxPaginationModule,
+    MatProgressSpinnerModule,
+    MatCardModule,
+    MatButtonModule,
+    MatPaginatorModule,
     RouterModule.forRoot([
       {
         path: 'albums',

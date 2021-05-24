@@ -16,14 +16,17 @@ export class PostsComponent implements OnInit {
   totalLength: number;
   page: number = 1;
   activePage:number = 0;
-  
+  isLoading: boolean = false;
+
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.posts$ = this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
+    this.isLoading=true;
     this.posts$.subscribe(p => {
       this.posts = p as Post[];
       this.totalLength=this.posts.length;
+      this.isLoading=false;
     });
   }
 

@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
+  isLoggedin: boolean;
   constructor(public service: LoginService, public router: Router) { 
     
   }
@@ -28,17 +28,19 @@ export class LoginComponent implements OnInit {
     if(res){
       localStorage.setItem("username",this.loginForm.value["username"]);
       localStorage.setItem("password",this.loginForm.value["password"]);
-      if(localStorage.getItem("username")==localStorage.getItem("password"))
+      if(localStorage.getItem("username")==localStorage.getItem("password")){
       this.router.navigate(["home"]);
-      
+      this.isLoggedin=true;
+    }
       else{
       alert("Username and password does not match");
       localStorage.clear();
-      
+      this.isLoggedin=false;
       }
     }
     else{
       alert("Invalid User");
+      this.isLoggedin=false;
     }
     f.reset();
   }

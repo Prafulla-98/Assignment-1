@@ -1,4 +1,4 @@
-<div class="post">
+<!-- <div class="post">
     <div>
         <span>Id: </span>
         <span>{{post.id}}</span>
@@ -15,4 +15,21 @@
         <span>Body: </span>
         <span>{{post.body}}</span>
     </div>
-</div>
+</div> -->
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Title: {{post.title}}
+        </mat-card-title>
+        <mat-card-subtitle class="subtitle1">
+            Id: {{post.id}}
+        </mat-card-subtitle>
+        <mat-card-subtitle class="subtitle2">
+            userId: {{post.userId}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        {{post.body}}
+    </mat-card-content>
+</mat-card>

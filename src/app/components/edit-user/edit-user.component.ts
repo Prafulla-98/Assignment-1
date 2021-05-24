@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+//import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-user',
@@ -11,8 +13,11 @@ export class EditUserComponent implements OnInit {
 
   loginForm: FormGroup;
   user: any;
-  isEditMode: boolean = true;
+  @Output() isEditMode: boolean = true;
   addUser: any;
+  options: string[] = ['Ahmedabad', 'Mumbai', 'Banglore', 'Pune', 'Kolkata', 'Hyderabad', 'Delhi', 'Chennai'];
+  filteredOptions: Observable<string[]>;
+
   constructor(private fb:FormBuilder, private router: Router) {
     const user = this.router.getCurrentNavigation().extras.state.userData;
     const add=this.router.getCurrentNavigation().extras.state.addUser;
@@ -24,6 +29,7 @@ export class EditUserComponent implements OnInit {
     
     
     if(this.isEditMode){
+      
       this.loginForm = this.fb.group({
         id: [this.user.id, Validators.required],
         name: [this.user.name, Validators.required],
@@ -44,13 +50,16 @@ export class EditUserComponent implements OnInit {
     }
     
      else{
+      
       this.loginForm = this.fb.group({
+        
         id: ['',Validators.required],
         name: ['',Validators.required],
         username:['',Validators.required],
         email: ['',[Validators.required, Validators.email]],
         phone: ['',Validators.required],
         street:['',Validators.required],
+        suite:'',
         city: ['',Validators.required],
         zipcode: ['',Validators.required],
         lat: '',
@@ -80,6 +89,7 @@ export class EditUserComponent implements OnInit {
     + this.loginForm.get('catchPhrase').value + '\n'
     + this.loginForm.get('bs').value + '\n');
     this.router.navigate(["home"]);
+    
   }
  
 

@@ -1,10 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-.container {
-    max-width: 1400px;
-    margin: 30px auto;
-    overflow: auto;
-    min-height: 500px;
-    border: 1px solid black;
-    padding: 30px;
-    border-radius: 5px;
-  }
+html, body { 
+  height: 100%; 
+}
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}  
+mat-card{
+  margin-left: 20px;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.primary{
+  color:white;
+  background-color: purple;
+}

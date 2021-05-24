@@ -7,15 +7,19 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { NewuserComponent } from './components/newuser/newuser.component';
 import { AlbumsModule } from './modules/albums.module';
 import { PostsModule } from './modules/posts.module';
+import { AuthguardService } from './authguard.service';
 
 const routes: Routes = [
   {path:"", component: LoginComponent},
-  {path:"home", component: HomeComponent, canActivate: [CanactivateGuard]},
   {path:"login", component: LoginComponent},
+  
+  {path:"home", component: HomeComponent, canActivate: [CanactivateGuard]},
+  
   {path:"editUser", component: EditUserComponent, canActivate: [CanactivateGuard]},
-  {path: 'newUser',component: NewuserComponent},
-  {path: 'posts',loadChildren: () => import('./modules/posts.module').then(m => m.PostsModule)},
-  {path:"albums", loadChildren: () => import('./modules/albums.module').then(m => m.AlbumsModule)}
+  {path: 'newUser',component: NewuserComponent, canActivate: [CanactivateGuard]},
+  {path: 'posts',canLoad:[AuthguardService], loadChildren: () => import('./modules/posts.module').then(m => m.PostsModule), canActivate: [CanactivateGuard]},
+  {path:"albums",canLoad:[AuthguardService], loadChildren: () => import('./modules/albums.module').then(m => m.AlbumsModule), canActivate: [CanactivateGuard]}
+  
 ];
 
 @NgModule({

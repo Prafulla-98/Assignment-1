@@ -1,8 +1,9 @@
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, OnInit, Input} from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { User } from './models/User';
+
 
 @Component({
   selector: 'app-home',
@@ -11,11 +12,16 @@ import { User } from './models/User';
 })
 export class HomeComponent implements OnInit {
   users$: Observable<User[]>;
+  data:User[];
+  isLoading: boolean = false;
+  @Input() isEditMode: boolean;
+
   constructor(private http: HttpClient, public router: Router) { }
 
   ngOnInit(): void {
-    this.users$ = this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
+    this.users$ = this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');    
   }
+  
   LogoutUser(){
     localStorage.clear();
     this.router.navigate([""]);
@@ -28,6 +34,7 @@ export class HomeComponent implements OnInit {
 
   addUser(value1)
   {
+    this.isEditMode=false;
     this.router.navigateByUrl('/editUser', { state: { userData: value1 } });
 
   }

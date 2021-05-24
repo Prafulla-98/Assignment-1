@@ -1,137 +1,149 @@
-
-
 <div class="addEditForm">
-<form class="form-horizontal" [formGroup]="loginForm" (submit)="loginForm.valid && saveUser()">
-    <div class="form-group">
-        <label class="control-label col-sm-2">Id: </label>
-        
-            <input type="text" class="form-control" placeholder="Id" id="id" formControlName="id" >
-        <div *ngIf="loginForm.get('id').touched && loginForm.get('id').invalid" class="invalid-feedback">
-            <div>Id is required</div>
+    <mat-card>
+    <form class="form-horizontal" [formGroup]="loginForm" (submit)="loginForm.valid && saveUser()">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Id </mat-label>
+            <input matInput formControlName="id" required>
+            <mat-error *ngIf="loginForm.controls.id.touched && loginForm.controls.id.invalid">
+                <span *ngIf="loginForm.controls.id.errors.required">This field is mandatory.</span>         
+            </mat-error>
+        </mat-form-field>
+
+        <div>  
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Name </mat-label>
+            <input matInput formControlName="name" required>
+            <mat-error *ngIf="loginForm.controls.name.touched && loginForm.controls.name.invalid">
+                <span *ngIf="loginForm.controls.name.errors.required">This field is mandatory.</span>
+            </mat-error>
+        </mat-form-field>
         </div>
-    </div>
     
-    <div class="form-group">
-        <label class="control-label col-sm-2">Name: </label>
-        
-            <input type="text" class="form-control" placeholder="Name" id="name" formControlName="name">
-            <div *ngIf="loginForm.get('name').touched && loginForm.get('name').invalid" class="invalid-feedback">
-                <div>Name is required</div>
-            </div>
-    </div>
    
-    <div class="form-group">
-        <label class="control-label col-sm-2">Username: </label>
-        
-            <input type="text" class="form-control" placeholder="Username" id="username" formControlName="username">
-            <div *ngIf="loginForm.get('username').touched && loginForm.get('username').invalid" class="invalid-feedback">
-                <div>Username is required</div>
-            </div>
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-sm-2">Email: </label>
-        
-            <input type="text" class="form-control" placeholder="Email" id="email" formControlName="email">
-            <div *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid" class="invalid-feedback">
-                <div *ngIf="form.get('email').errors.required">Email is required</div>
-                <div *ngIf="form.get('email').errors.email">Enter valid email address</div>
-            </div>
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-sm-2">Street: </label>
-        
-            <input type="text" class="form-control" placeholder="Street" id="street" formControlName="street">
-            <div *ngIf="loginForm.get('street').touched && loginForm.get('street').invalid" class="invalid-feedback">
-                <div>Street is required</div>
-            </div>
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-sm-2">Suite: </label>
-       
-            <input type="text" class="form-control" placeholder="Suite" id="suite" formControlName="suite">
-        
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-sm-2">City: </label>
-        
-            <input type="text" class="form-control" placeholder="City" id="city" formControlName="city" [ngClass]="{'is-invalid': loginForm.get('city').touched && loginForm.get('city').invalid}">
-            <div *ngIf="loginForm.get('city').touched && loginForm.get('city').invalid" class="invalid-feedback">
-                <div>City is required</div>
-            </div>
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-sm-2">Zipcode: </label>
-        
-            <input type="text" class="form-control" placeholder="Zipcode" id="zipcode" formControlName="zipcode" [ngClass]="{'is-invalid': loginForm.get('zipcode').touched && loginForm.get('zipcode').invalid}">
-            <div *ngIf=" loginForm.get('zipcode').touched && loginForm.get('zipcode').invalid" class="invalid-feedback">
-                <div>Zipcode is required</div>
-            </div>
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-sm-2">Latitude: </label>
-        
-            <input type="text" class="form-control" placeholder="Latitude" id="lat" formControlName="lat">
-        
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-sm-2">Longitude: </label>
-        
-            <input type="text" class="form-control" placeholder="Longitude" id="lng" formControlName="lng">
-        
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-sm-2">Phone: </label>
-        
-            <input type="text" class="form-control" placeholder="Phone" id="phone" formControlName="phone" [ngClass]="{'is-invalid': loginForm.get('phone').touched && loginForm.get('phone').invalid}">
-            <div *ngIf="loginForm.get('phone').touched && loginForm.get('phone').invalid" class="invalid-feedback">
-                <div>Phone number is required</div>
-            </div>
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-sm-2">Website: </label>
-        
-            <input type="text" class="form-control" placeholder="Website" id="website" formControlName="website">
-        
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-sm-2">Company Name: </label>
-        
-            <input type="text" class="form-control" placeholder="Company Name" id="companyName" formControlName="companyName" [ngClass]="{'is-invalid': loginForm.get('companyName').touched && loginForm.get('companyName').invalid}">
-            <div *ngIf="loginForm.get('companyName').touched && loginForm.get('companyName').invalid" class="invalid-feedback">
-                <div>Company Name is required</div>
-            </div>
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-sm-2">Catch Phrase: </label>
-        
-            <input type="text" class="form-control" placeholder="catchPhrase" id="catchPhrase" formControlName="catchPhrase">
-        
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-sm-2">BS: </label>
-        
-            <input type="text" class="form-control" placeholder="BS" id="bs" formControlName="bs">
-        
-    </div>
-    
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            
-            <button type="submit" class="submit-btn btn btn-primary" [disabled]="!loginForm.valid">Save</button>
+        <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Username </mat-label>
+            <input matInput formControlName="username" required>
+            <mat-error *ngIf="loginForm.controls.username.touched && loginForm.controls.username.invalid">
+              <span *ngIf="loginForm.controls.username.errors.required">This field is mandatory.</span> 
+            </mat-error>
+        </mat-form-field>        
         </div>
+    
+        <div>
+            <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Email </mat-label>
+            <input matInput formControlName="email" required>
+            <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
+              <span *ngIf="loginForm.controls.email.errors.required">This field is mandatory.</span>
+              <span *ngIf="loginForm.controls.email.errors.email">Enter valid email</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+    
+    <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Street </mat-label>
+            <input matInput formControlName="street" required>
+            <mat-error *ngIf="loginForm.controls.street.touched && loginForm.controls.username.invalid">
+              <span *ngIf="loginForm.controls.street.errors.required">This field is mandatory.</span> 
+            </mat-error>
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Suite </mat-label>
+            <input matInput formControlName="suite">
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> City </mat-label>
+            <input matInput formControlName="city" [matAutocomplete]="auto" required>
+            <mat-error *ngIf="loginForm.controls.city.touched && loginForm.controls.username.invalid">
+              <span *ngIf="loginForm.controls.city.errors.required">This field is mandatory.</span> 
+            </mat-error>
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of options" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Zipcode </mat-label>
+            <input matInput formControlName="zipcode" required>
+            <mat-error *ngIf="loginForm.controls.zipcode.touched && loginForm.controls.username.invalid">
+              <span *ngIf="loginForm.controls.zipcode.errors.required">This field is mandatory.</span> 
+            </mat-error>
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Latitude: </mat-label>
+            <input matInput formControlName="lat">
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Longitude: </mat-label>
+            <input matInput  formControlName="lng">
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Phone </mat-label>
+            <input matInput formControlName="phone" required>
+            <mat-error *ngIf="loginForm.controls.phone.touched && loginForm.controls.username.invalid">
+              <span *ngIf="loginForm.controls.phone.errors.required">This field is mandatory.</span> 
+            </mat-error>
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Website </mat-label>
+            <input matInput formControlName="website">
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Company Name </mat-label>
+            <input matInput formControlName="companyName" required>
+            <mat-error *ngIf="loginForm.controls.companyName.touched && loginForm.controls.username.invalid">
+              <span *ngIf="loginForm.controls.companyName.errors.required">This field is mandatory.</span> 
+            </mat-error>
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Catch Phrase </mat-label>
+            <input matInput formControlName="catchPhrase">
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> BS </mat-label>
+            <input matInput formControlName="bs">
+        </mat-form-field>
+    </div>
+    
+    <div class="form-group">       
+            <!-- <button mat-stroked-button type="submit" class="primary" [disabled]="!loginForm.valid">Save</button> -->
+            <button mat-stroked-button class="primary" [disabled]="!loginForm.valid">Save</button>
+
     </div>
   
 </form>
+</mat-card>
 </div>

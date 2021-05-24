@@ -1,0 +1,10 @@
+
+mat-sidenav{
+    background-color: #fafafa;
+    border: none;
+    margin-top: 80px;
+}
+button{
+    display: block;
+    color: purple;
+}

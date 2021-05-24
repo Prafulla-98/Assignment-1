@@ -15,14 +15,16 @@ export class AlbumsComponent implements OnInit {
   albums: Album[];
   totalLength: number;
   page: number = 1;
- 
+ isLoading: boolean = false;
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.albums$ = this.http.get<Album[]>('https://jsonplaceholder.typicode.com/albums/');
+    this.isLoading=true;
     this.albums$.subscribe(a => {
       this.albums = a as Album[];
       this.totalLength=this.albums.length;
+      this.isLoading=false;
     });
     
     

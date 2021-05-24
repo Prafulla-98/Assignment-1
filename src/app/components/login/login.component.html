@@ -1,20 +1,41 @@
+ <div class="bg-img">
  <div class="login">
+   <mat-card>
     <h2>Login</h2>
 
     <form #f="ngForm" [formGroup]="loginForm" (ngSubmit)="CheckUser(f)">
-        <div class="username">
+        Username: <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Username
+            </mat-label>
+            <input matInput formControlName="username" required>
+            <mat-error *ngIf="loginForm.controls.username.touched && loginForm.controls.email.invalid">
+              <span *ngIf="loginForm.controls.username.errors.required">This field is mandatory.</span>
+            </mat-error>
+          </mat-form-field>
+        <!-- <div class="username">
             Username: 
             <input type="text" id="username" name="username" formControlName="username"/>
+        </div> -->
+        <div>
+        Password: <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Password
+            </mat-label>
+            <input matInput formControlName="password" type="password" required>
+            <mat-error *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
+              <span *ngIf="loginForm.controls.password.errors.required">This field is mandatory.</span>
+            </mat-error>
+          </mat-form-field>
         </div>
-       
-    <div class="password">
+    <!-- <div class="password">
         Password:
     <input type="password" id="password" name="password" formControlName="password"/>
-    </div>
+    </div> -->
     
     
     <div class="button">
-    <button type="submit">Login</button>
+      <button mat-stroked-button class="primary" >Login</button>
 </div>
 </form>
+</mat-card>
+</div>
 </div>

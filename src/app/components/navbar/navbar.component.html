@@ -1,6 +1,34 @@
-<div class="nav"> 
-    
-    <a routerLink="./" routerLinkActive="active">Login</a>
-   <a routerLink="../posts" routerLinkActive="active">Posts</a>
-    <a routerLink="../albums" routerLinkActive="active">Albums</a>
-    <a routerLink="../newUser" routerLinkActive="active">Add New User</a></div>
+   <!-- <mat-sidenav-container class="example-container" >
+        <mat-sidenav #sidenav class="example-sidenav" mode="side">
+            <mat-nav-list>
+            <a mat-list-item routerLink="./" routerLinkActive="active">Login</a>
+            <a mat-list-item routerLink="../posts" routerLinkActive="active">Posts</a>
+             <a mat-list-item routerLink="../albums" routerLinkActive="active">Albums</a>
+             <a mat-list-item routerLink="../newUser" routerLinkActive="active">Add New User</a>
+            </mat-nav-list>
+        </mat-sidenav>
+      
+        <div class="example-sidenav-content">
+          <button type="button" mat-button (click)="sidenav.toggle()">
+            Menu
+          </button>
+        </div>
+      
+      </mat-sidenav-container>  -->
+
+      <mat-sidenav-container class="example-container">
+        <mat-sidenav #side mode="side" opened>
+          <a mat-list-item routerLink="./" routerLinkActive="active">Login</a>
+            <a mat-list-item routerLink="../posts" routerLinkActive="active">Posts</a>
+             <a mat-list-item routerLink="../albums" routerLinkActive="active">Albums</a>
+             <a mat-list-item routerLink="../newUser" routerLinkActive="active">Add New User</a>
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <button (click)="side.toggle()">
+            Menu
+          </button>
+         <router-outlet></router-outlet>
+
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+      

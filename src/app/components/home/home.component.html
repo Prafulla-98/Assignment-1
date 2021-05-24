@@ -1,12 +1,13 @@
 
-<button type="button" (click)="LogoutUser()" style="float: right;">
-    Logout
-</button>
-<button type="button" (click)="addUser('')" style="float: right;">
-    Add new user
-</button>
 
 <div>
+<button mat-stroked-button class="primary" (click)="LogoutUser()" style="float: right;">Logout</button>
+<button mat-stroked-button class="primary" (click)="addUser('')" style="float: right;">Add New User</button>
+</div>
+
+<div>
+    
+      
     <table class="users">
         <tr class="headers">
             <th>Id</th>
@@ -29,5 +30,17 @@
         <tr (edit)="edit($event)" app-user *ngFor="let user of (users$ | async)" [user]="user">
         </tr>
     </table>
+    
 </div>
+
+<!-- <div>
+    <table mat-table [dataSource]="data">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> id </th>
+          <td mat-cell *matCellDef="let oper"> {{data.Id}} </td>
+        </ng-container>
+       
+    </table>
+</div> -->
+
 

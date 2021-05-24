@@ -1,9 +1,10 @@
-import { Observable } from 'rxjs';
-import { Component, Output, OnInit, Input} from '@angular/core';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { User } from './models/User';
 
+import { Component, OnInit, Output} from '@angular/core';
+import { Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+import { User } from './models/User';
+import { UsersService } from 'src/app/users.service';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -11,31 +12,41 @@ import { User } from './models/User';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  users$: Observable<User[]>;
-  data:User[];
-  isLoading: boolean = false;
-  @Input() isEditMode: boolean;
+  @Output() public edit = new EventEmitter();
+  ELEMENT_DATA : User[];
+  displayedColumns: string[] = ['Id','Name','Username','Email','Street','Suite','City','Zipcode','Latitude','Longitude','Phone','Website','Company Name', 'Catch Phrase','BS','Edit'];
+  dataSource;
 
-  constructor(private http: HttpClient, public router: Router) { }
+  constructor( public router: Router, private service: UsersService) { 
+    
+  }
 
-  ngOnInit(): void {
-    this.users$ = this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');    
+  ngOnInit() {
+    this.dataSource = new MatTableDataSource<User>(this.ELEMENT_DATA);
+    this.getAllUsers();
+    
   }
   
+ public getAllUsers(){
+  let resp = this.service.getUsers();
+    resp.subscribe(users=>this.dataSource.data=users as User[]);
+}
+
   LogoutUser(){
     localStorage.clear();
     this.router.navigate([""]);
 
   }
-  edit(value) {
-    
-    this.router.navigateByUrl('/editUser', { state: { userData: value } });
+
+  addUser()
+  {
+    //this.isEditMode=false;
+    this.router.navigateByUrl('/editUser', { state: { userData: '' } });
+
   }
 
-  addUser(value1)
-  {
-    this.isEditMode=false;
-    this.router.navigateByUrl('/editUser', { state: { userData: value1 } });
-
+  editData(value) {
+    this.edit.emit(this.ELEMENT_DATA);
+    this.router.navigateByUrl('/editUser', { state: { userData: value } });
   }
 }

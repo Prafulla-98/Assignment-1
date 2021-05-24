@@ -1,9 +1,14 @@
 html, body { 
   height: 100%; 
+  /* background-repeat: no-repeat;
+    
+    background-image:url("https://kinneygroup.com/wp-content/uploads/2019/10/fw-bg-gradient.png" ); */
 }
 body { 
   margin: 0; 
   font-family: Roboto, "Helvetica Neue", sans-serif; 
+  background-color: #fafafa;
+  
 }  
 mat-card{
   margin-left: 20px;

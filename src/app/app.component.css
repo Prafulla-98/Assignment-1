@@ -1,4 +1,3 @@
-
 mat-sidenav{
     background-color: #fafafa;
     border: none;
@@ -6,5 +5,5 @@ mat-sidenav{
 }
 button{
     display: block;
-    color: purple;
+    
 }

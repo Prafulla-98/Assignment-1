@@ -10,7 +10,7 @@ import { Post } from '../model/Post';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-
+  
   posts$: Observable<Post[]>;
   posts: Post[];
   totalLength: number;
@@ -21,6 +21,7 @@ export class PostsComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+    
     this.posts$ = this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
     this.isLoading=true;
     this.posts$.subscribe(p => {

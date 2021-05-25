@@ -10,7 +10,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
+import { MatTreeModule } from '@angular/material/tree';
 @NgModule({
   declarations: [
     AlbumsComponent,
@@ -24,6 +24,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatCardModule,
     MatButtonModule,
     MatPaginatorModule,
+    MatTreeModule,
     RouterModule.forRoot([
       {
         path: 'albums',

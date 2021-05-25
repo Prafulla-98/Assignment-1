@@ -29,6 +29,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { AuthguardService } from './authguard.service';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatTabsModule} from '@angular/material/tabs';
+
 @NgModule({
 
   declarations: [
@@ -63,7 +65,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCardModule,
     MatSortModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule    
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]

@@ -17,8 +17,8 @@ const routes: Routes = [
   
   {path:"editUser", component: EditUserComponent, canActivate: [CanactivateGuard]},
   {path: 'newUser',component: NewuserComponent, canActivate: [CanactivateGuard]},
-  {path: 'posts',canLoad:[AuthguardService], loadChildren: () => import('./modules/posts.module').then(m => m.PostsModule), canActivate: [CanactivateGuard]},
-  {path:"albums",canLoad:[AuthguardService], loadChildren: () => import('./modules/albums.module').then(m => m.AlbumsModule), canActivate: [CanactivateGuard]}
+  {path: 'posts', loadChildren: () => import('./modules/posts.module').then(m => m.PostsModule), canActivate: [CanactivateGuard]},
+  {path:"albums", loadChildren: () => import('./modules/albums.module').then(m => m.AlbumsModule), canActivate: [CanactivateGuard]}
   
 ];
 

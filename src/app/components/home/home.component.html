@@ -1,11 +1,6 @@
-
-
 <div>
-<button mat-stroked-button class="primary" (click)="LogoutUser()" style="float: right;">Logout</button>
-<button mat-stroked-button class="primary" (click)="addUser()" style="float: right;">Add New User</button>
-</div>
-
-<div>
+  <mat-tab-group>
+    <mat-tab label="Users">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <ng-container matColumnDef="Id">
@@ -96,7 +91,21 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-      
+    </mat-tab>
+    <mat-tab label="Add New User"> 
+      <div class="container">
+        <div class="center">
+          <button mat-stroked-button class="primary" (click)="addUser('')">Add New User</button> 
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Logout"> 
+      <div class="container">
+        <div class="center">
+      <button mat-stroked-button class="primary" (click)="LogoutUser()">Logout</button> 
+        </div>
+      </div>
+    </mat-tab>
     <!-- <table class="users">
         <tr class="headers">
             <th>Id</th>
@@ -120,7 +129,7 @@
         <tr (edit)="edit($event)" app-user *ngFor="let user of (users$ | async)" [user]="user">
         </tr>
     </table> -->
-    
+  </mat-tab-group>
 </div>
 
 

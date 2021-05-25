@@ -9,6 +9,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatCardModule,
     MatButtonModule,
     MatPaginatorModule,
+    MatExpansionModule,
+    MatTabsModule,
     RouterModule.forRoot([
       {
         path: 'posts',

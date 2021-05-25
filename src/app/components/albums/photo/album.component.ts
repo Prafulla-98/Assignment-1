@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+//import { SidenavService } from 'src/app/sidenav.service';
 import { Photo } from '../model/photo';
 
 @Component({
@@ -14,6 +15,7 @@ export class AlbumComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    
     this.activatedRoute.data.subscribe((data: { photos: Photo[] }) => {
       this.photos = data.photos;
     });

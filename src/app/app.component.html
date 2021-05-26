@@ -6,20 +6,24 @@
   <router-outlet></router-outlet>
 </div> -->
 
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #side mode="side" closed>
-    <button mat-button routerLink="./" routerLinkActive="active" color="primary">  Login/Logout</button>
+<mat-sidenav-container class="example-container" >
+  <mat-sidenav #side  mode="side" closed>
+    <button mat-button routerLink="../home" routerLinkActive="active" color="primary"><mat-icon> person_pin</mat-icon> Users</button>
     
   
-      <button mat-button routerLink="../posts" routerLinkActive="active" color="primary">Posts</button>
-       <button mat-button routerLink="../albums" routerLinkActive="active" color="primary">Albums</button>
-       <button mat-button routerLink="../newUser" routerLinkActive="active" color="primary">Add New User</button>
-      
+      <button mat-button routerLink="../posts" routerLinkActive="active" color="primary"><mat-icon>library_books</mat-icon> Posts</button>
+       <button mat-button routerLink="../albums" routerLinkActive="active" color="primary"><mat-icon>photo</mat-icon> Albums</button>
+       <!-- <button mat-button routerLink="../newUser" routerLinkActive="active" color="primary">Add New User</button> -->
+       
   </mat-sidenav>
-  <mat-sidenav-content>
-    <button mat-button (click)="side.toggle()">
+  
+  <mat-sidenav-content >
+    <div>
+    <button mat-button style="float: left;" (click)="side.toggle()">
       <mat-icon>list</mat-icon>
     </button>
+    <button *ngIf=login mat-stroked-button class="primary" style="float: right; display: inline-flex;" (click)="LogoutUser()"><mat-icon>power_settings_new</mat-icon> Logout</button> 
+  </div>
    <router-outlet></router-outlet>
 
   </mat-sidenav-content>

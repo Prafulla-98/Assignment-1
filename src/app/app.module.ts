@@ -20,6 +20,7 @@ import { DialogBoxComponent } from './modules/home/components/dialog-box/dialog-
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from '../app/modules/login/component/login-page/login.component';
@@ -61,7 +62,11 @@ import { AuthguardService } from './authguard.service';
     MatIconModule,
     MatDialogModule,
     MatTabsModule,
-    MatSidenavModule    
+    MatSidenavModule,
+    MatPaginatorModule  
+  ],
+  exports:[
+    MatSortModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]

@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ELEMENT_DATA : User[];
   displayedColumns: string[] = ['Id','Name','Username','Email','Street','Suite','City','Zipcode','Latitude','Longitude','Phone','Website','Company Name', 'Catch Phrase','BS','Edit'];
   dataSource;
-  totalLength: number;
+  //totalLength: number;
   page: number = 1;
 
   constructor( public router: Router, private service: UsersService, private login: LoginService) { 
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
  public getAllUsers(){
   let resp = this.service.getUsers();
     resp.subscribe(users=>this.dataSource.data=users as User[]);
-      this.totalLength=this.dataSource.length;
+      //this.totalLength=this.dataSource.length;
 }
 
   LogoutUser(){

@@ -29,6 +29,7 @@ import { GeocolorDirective } from '../app/modules/home/services/geocolor/geocolo
 import { EditUserComponent } from './modules/home/components/edit-user/edit-user.component';
 
 import { AuthguardService } from './authguard.service';
+import { TodoModule } from './modules/todo/todo.module';
 @NgModule({
 
   declarations: [
@@ -63,7 +64,8 @@ import { AuthguardService } from './authguard.service';
     MatDialogModule,
     MatTabsModule,
     MatSidenavModule,
-    MatPaginatorModule  
+    MatPaginatorModule,
+    TodoModule
   ],
   exports:[
     MatSortModule

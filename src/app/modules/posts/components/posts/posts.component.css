@@ -4,5 +4,10 @@
     margin-bottom: 200px;
 }
 .tab{
-    margin-left: 70px;
+    margin-left: 80px;
+    margin-top: 50px;
+}
+.pagination{
+    margin-top: 10px;
+    margin-left: 150px;
 }

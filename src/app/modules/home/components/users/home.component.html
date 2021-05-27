@@ -105,7 +105,8 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
       
-      <mat-paginator [length]="totalLength" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    
     </mat-tab>
 
     <mat-tab label="Posts"> 
@@ -122,6 +123,14 @@
         <span>Albums</span>
       </ng-template>    
         <app-albums></app-albums>
+    </mat-tab>
+
+    <mat-tab label="Todo">  
+      <ng-template mat-tab-label>
+        <mat-icon>check_box</mat-icon> 
+        <span>Todo</span>
+      </ng-template>    
+        <app-todo></app-todo>
     </mat-tab>
     <!-- <table class="users">
         <tr class="headers">

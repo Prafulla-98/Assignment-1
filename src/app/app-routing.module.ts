@@ -6,6 +6,7 @@ import {CanactivateGuard} from './canactivate.guard';
 import { EditUserComponent } from './modules/home/components/edit-user/edit-user.component';
 import { AlbumsModule } from './modules/albums/albums.module';
 import { PostsModule } from './modules/posts/posts.module';
+import { TodoComponent } from './modules/todo/components/todo/todo.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'login'},
@@ -27,9 +28,9 @@ const routes: Routes = [
   {path:"", component: LoginComponent},
   {path:"home", component: HomeComponent, canActivate: [CanactivateGuard]},
   {path:"editUser", component: EditUserComponent, canActivate: [CanactivateGuard]},
-  {path: 'posts', loadChildren: () => import('./modules/posts/posts.module').then(m => m.PostsModule), canActivate: [CanactivateGuard]},
-  {path:"albums", loadChildren: () => import('./modules/albums/albums.module').then(m => m.AlbumsModule), canActivate: [CanactivateGuard]}
-  
+  {path: 'posts', loadChildren: () => import('./modules/posts/posts.module').then(m => m.PostsModule), canLoad: [CanactivateGuard]},
+  {path:"albums", loadChildren: () => import('./modules/albums/albums.module').then(m => m.AlbumsModule), canLoad: [CanactivateGuard]},
+  {path:"todo", component: TodoComponent}
 ];
 
 @NgModule({

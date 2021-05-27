@@ -1,12 +1,14 @@
 <div class="albums">
-    <h1 style="padding-left: 500px;">All Albums</h1>
+<div class="container text-center">
+    
+    <h1 class="typography">All Albums</h1>
 <p *ngIf="isLoading"> <mat-spinner></mat-spinner></p>
-<div class="container">
-    <div class="row">
-        <div class="col">
-<mat-card class="typography" *ngFor="let album of (albums$ | async) | 
+
+    
+<div class="row"> 
+<mat-card class="column" class="typography" class="col-3 text-center" *ngFor="let album of (albums$ | async) | 
 paginate: { 
-    itemsPerPage: 10, 
+    itemsPerPage: 9, 
     currentPage: page,
     totalItems: totalLength
 }
@@ -18,7 +20,7 @@ paginate: {
         <button mat-stroked-button type="button" class="primary" (click)="getLink(album.id)">More Info</button>
     </mat-card-actions>
 </mat-card>
-</div> </div> </div>
+</div> 
     <!-- <ul>
         <li *ngFor="let album of (albums$ | async) | 
         paginate: { 
@@ -30,6 +32,7 @@ paginate: {
             {{ album.title }} <button type="button" class="btn btn-primary" (click)="getLink(album.id)">More Info</button>
         </li>
     </ul> -->
- <pagination-controls (pageChange)="page = $event"></pagination-controls>
-
+    
+         <pagination-controls class="typography" (pageChange)="page = $event"></pagination-controls>
+        </div> 
 </div>

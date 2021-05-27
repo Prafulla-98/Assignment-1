@@ -1,6 +1,7 @@
-<div>
-  <button style="float: right;margin-right: 5px;" mat-stroked-button class="primary" (click)="addUser('')"><mat-icon>person_add</mat-icon> Add New User</button> 
-  </div>
+<div class="buttons">
+  <button  mat-stroked-button class="primary" (click)="addUser('')"><mat-icon>person_add</mat-icon> Add New User</button> 
+  
+</div>
   <div>
     <br><br>
   <mat-tab-group>
@@ -14,6 +15,7 @@
         <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
       </mat-form-field>
     </div>
+    <div *ngIf="isLoading"><mat-spinner></mat-spinner></div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 
         <ng-container matColumnDef="Id">

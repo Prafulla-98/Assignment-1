@@ -10,9 +10,14 @@ export class AuthguardService implements CanLoad {
 
   canLoad(route: Route): boolean {
     
-    //determine whether you want to load the module
-    //return true or false
-    
-    return false; 
+    if(localStorage.getItem("username")==null && localStorage.getItem("password")==null){
+      alert("Please enter valid username and password to login");
+      this.router.navigate(["login"]);
+      
+      return false;
+    }else{
+      return true;
   }
-}
+    }
+  }
+

@@ -1,5 +1,5 @@
- <div class="bg-img">
- <div class="login">
+<div class="login">
+ <div class="container text-center">
    <mat-card>
     <h2>Login</h2>
 
@@ -7,7 +7,9 @@
         Username: <mat-form-field class="form-field" appearance="outline">
             <mat-label> Username
             </mat-label>
+           
             <input matInput formControlName="username" required>
+          
             <mat-error *ngIf="loginForm.controls.username.touched && loginForm.controls.email.invalid">
               <span *ngIf="loginForm.controls.username.errors.required">This field is mandatory.</span>
             </mat-error>

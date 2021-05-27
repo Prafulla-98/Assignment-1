@@ -24,17 +24,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
   dataSource;
   //totalLength: number;
   page: number = 1;
-
+isLoading=true;
   constructor( public router: Router, private service: UsersService, private login: LoginService) { 
     
   }
 
   ngOnInit() {
+    
     this.dataSource = new MatTableDataSource<User>(this.ELEMENT_DATA);
     this.getAllUsers();
     
   }
   ngAfterViewInit(): void {
+    
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
@@ -45,18 +47,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
   
  public getAllUsers(){
   let resp = this.service.getUsers();
-    resp.subscribe(users=>this.dataSource.data=users as User[]);
-      //this.totalLength=this.dataSource.length;
+    resp.subscribe(users=>{this.dataSource.data=users as User[]; this.isLoading=false;});
+ 
 }
 
-  LogoutUser(){
-    localStorage.clear();
-    this.router.navigate([""]);
-    this.login.isLoggedIn=false;
-  }
+  // LogoutUser(){
+  //   localStorage.clear();
+  //   this.router.navigate([""]);
+  //   this.login.isLoggedIn=false;
+  // }
+
   addUser(value1)
   {
-    //this.isEditMode=false;
+    
     this.router.navigateByUrl('/editUser', { state: { userData: value1 } });
 
   }

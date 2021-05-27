@@ -8,6 +8,9 @@
 
 <mat-sidenav-container class="example-container" >
   <mat-sidenav #side  mode="side" closed>
+    <div *ngIf="this.login.isLoggedIn">
+    <h3 class="typography" class="project">Project</h3>
+    <div class="sidenav" >
     <button mat-button routerLink="../home" routerLinkActive="active" color="primary"><mat-icon> person_pin</mat-icon> Users</button>
     
   
@@ -15,14 +18,18 @@
        <button mat-button routerLink="../albums" routerLinkActive="active" color="primary"><mat-icon>photo</mat-icon> Albums</button>
        <!-- <button mat-button routerLink="../newUser" routerLinkActive="active" color="primary">Add New User</button> -->
        <button mat-button routerLink="../todo" routerLinkActive="active" color="primary"><mat-icon>check_box</mat-icon> Todo</button>
-  </mat-sidenav>
+      </div>
+    </div>
+      </mat-sidenav>
   
   <mat-sidenav-content >
     <div>
+      <div *ngIf="this.login.isLoggedIn">
     <button mat-button style="float: left;" (click)="side.toggle()">
       <mat-icon>list</mat-icon>
     </button>
-    <button *ngIf=login mat-stroked-button class="primary" style="float: right; display: inline-flex;" (click)="LogoutUser()"><mat-icon>power_settings_new</mat-icon> Logout</button> 
+    <button  mat-stroked-button class="btn btn-danger" (click)="LogoutUser()" style="float: right;"><mat-icon class="icon">power_settings_new</mat-icon>Logout</button>  
+  </div>
   </div>
    <router-outlet></router-outlet>
 

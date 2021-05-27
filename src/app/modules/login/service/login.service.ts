@@ -4,10 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginService {
-isLoggedIn: boolean;
+  isLoggedIn=false;
   constructor() { }
+  
   ValidateUser(username,password){
+    this.isLoggedIn=true;
    return true;
-   this.isLoggedIn=true;
-}
+   
+  }
+
+  
 }

@@ -1,9 +1,18 @@
-mat-sidenav{
-    background-color: #fafafa;
-    border: none;
-    margin-top: 80px;
+.sidenav{
+    
+    margin-top: 50px;
 }
 button{
     display: block;
     
+}
+mat-sidenav{
+    background-color: #fafafa;
+    border: none;
+}
+.project{
+    margin-left: 20px;
+    color: purple;
+    font-weight: bold;
+    margin-top:8px;
 }

@@ -16,6 +16,7 @@ export class TodoComponent implements OnInit {
   displayedColumns:string[] = ['Id', 'UserID', 'Title', 'Status'];
   dataSource;
   page: number = 1;
+  isLoading=true;
   constructor(private service: TodoService) { }
 
   ngOnInit(): void {
@@ -30,7 +31,9 @@ export class TodoComponent implements OnInit {
 
   public getAllTodo(){
     let resp=this.service.getTodoList();
-    resp.subscribe(todo=>this.dataSource.data=todo as Todo[]);
+    
+    resp.subscribe(todo=>{this.dataSource.data=todo as Todo[]; this.isLoading=false;});
+    
   }
 
 }

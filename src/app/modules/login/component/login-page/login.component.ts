@@ -3,14 +3,13 @@ import { FormGroup, FormControl, NgForm} from '@angular/forms';
 import { LoginService} from '../../service/login.service';
 import {Router} from '@angular/router';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
- login: boolean; 
+  
   constructor(public service: LoginService, public router: Router) { 
     
   }
@@ -30,7 +29,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("password",this.loginForm.value["password"]);
       if(localStorage.getItem("username")==localStorage.getItem("password")){
       this.router.navigate(["home"]);
-     this.login=true;
+     
     }
       else{
       alert("Username and password does not match");

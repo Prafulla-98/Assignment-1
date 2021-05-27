@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
-//import { LoginModule } from './components/login/login.module';
-import { LoginService } from '../app/modules/login/service/login.service';
+import { LoginService } from './modules/login/service/login.service';
 
 @Component({
   selector: 'app-root',
@@ -11,17 +10,15 @@ import { LoginService } from '../app/modules/login/service/login.service';
 
 export class AppComponent {
   title = 'assignment';
-  login: boolean = true;
-  constructor(private loggedin: LoginService, private router: Router){
-    //this.login=true;
+
+  constructor(public login: LoginService, private router: Router){
+
   }
   
-
   LogoutUser(){
     localStorage.clear();
     this.router.navigate([""]);
-    this.loggedin.isLoggedIn=false;
-    this.login=false;
+    this.login.isLoggedIn=false;
   }
 }
   

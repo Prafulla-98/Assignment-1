@@ -1,0 +1,12 @@
+th, mat-paginator, mat-tab{
+    font-weight: bold;
+    color: purple;
+  }
+  .primary{
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .buttons{
+    float:right;
+  }

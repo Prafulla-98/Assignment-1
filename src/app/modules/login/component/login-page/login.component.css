@@ -1,9 +1,4 @@
-.username{
-    margin-bottom: 10px;
-}
-.password{
-    margin-bottom: 20px;
-}
+
 .login{
     padding-top: 150px;
     margin-left: 550px;
@@ -14,8 +9,4 @@ mat-card{
  width: 40%;
 }
 
-/* .bg-img{
-    background-repeat: no-repeat;
-    
-    background-image:url("https://kinneygroup.com/wp-content/uploads/2019/10/fw-bg-gradient.png" );
-} */
+

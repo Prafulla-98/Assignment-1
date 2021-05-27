@@ -9,6 +9,6 @@ export class TodoService {
   constructor(private http: HttpClient) { }
 
   public getTodoList(){
-    return this.http.get("https://jsonplaceholder.typicode.com/users");
+    return this.http.get("https://jsonplaceholder.typicode.com/todos");
  }
 }

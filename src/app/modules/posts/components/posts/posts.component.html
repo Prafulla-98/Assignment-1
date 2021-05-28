@@ -1,16 +1,38 @@
 
+
+
 <div class="tab">
 
 <div class="posts">
     <mat-accordion>
-    <mat-expansion-panel hideToggle>
+    <mat-expansion-panel showToggle>
         <mat-expansion-panel-header>
             <mat-panel-title>All Posts</mat-panel-title>
             <mat-panel-description>There are posts inside this</mat-panel-description>
 </mat-expansion-panel-header>
     <div *ngIf="isLoading"><mat-spinner></mat-spinner></div>
     
-    <mat-card class="typography" *ngFor="let post of (posts$ | async | 
+    <div class="row">
+    <div class="card" style="width: 18rem;" *ngFor="let post of (posts$ | async | 
+    paginate: { 
+        itemsPerPage: 8, 
+        currentPage: page,
+        totalItems: totalLength
+    })">
+        <div class="col-md">
+        <div class="card-body">
+          <h5 class="card-title"><b>{{post.title}}</b></h5>
+          <p class="card-text">{{post.body}}</p>
+          <button mat-button class="primary" (click)="getLink(post.id)">More Info</button>
+        </div>
+    </div>
+      </div>
+    </div>
+    <div class="pagination">  
+        <app-pagination [totalRecords]="this.totalLength" [recordsPerPage]="8" (onPageChange)="page = $event"></app-pagination>        
+</div>
+
+    <!-- <mat-card class="typography" *ngFor="let post of (posts$ | async | 
     paginate: { 
         itemsPerPage: 10, 
         currentPage: page,
@@ -24,27 +46,13 @@
         <button mat-stroked-button type="button" class="primary" (click)="getLink(post.id)">More Info</button>
     </mat-card-actions>
 
-</mat-card>
+    </mat-card>
+
 <div class="pagination">  
-    <!-- <mat-paginator [length]="this.totalLength"
-    [pageSize]="10"
-    [pageSizeOptions]="[5, 10, 25, 100]"
-    [pageIndex]="this.activePage" (page)="pageEvent = handlePage($event)">
-</mat-paginator> -->
-          <app-pagination [totalRecords]="this.totalLength" [recordsPerPage]="10" (onPageChange)="page = $event"></app-pagination>     
-     
-</div>  
+          <app-pagination [totalRecords]="this.totalLength" [recordsPerPage]="10" (onPageChange)="page = $event"></app-pagination>        
+</div>   -->
+
 </mat-expansion-panel>
-    <!-- <ul>
-        <li *ngFor="let post of (posts$ | async | 
-        paginate: { 
-            itemsPerPage: 10, 
-            currentPage: page,
-            totalItems: totalLength
-        })">
-            {{ post.title }} <button type="button" class="btn btn-primary" (click)="getLink(post.id)">More Info</button>
-        </li>
-    </ul> -->
 </mat-accordion>
 </div>
 

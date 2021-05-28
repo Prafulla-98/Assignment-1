@@ -20,19 +20,7 @@ paginate: {
         <button mat-stroked-button type="button" class="primary" (click)="getLink(album.id)">More Info</button>
     </mat-card-actions>
 </mat-card>
-</div> 
-    <!-- <ul>
-        <li *ngFor="let album of (albums$ | async) | 
-        paginate: { 
-            itemsPerPage: 10, 
-            currentPage: page,
-            totalItems: totalLength
-        }
-        ">
-            {{ album.title }} <button type="button" class="btn btn-primary" (click)="getLink(album.id)">More Info</button>
-        </li>
-    </ul> -->
-    
+</div>     
          <pagination-controls class="typography" (pageChange)="page = $event"></pagination-controls>
         </div> 
 </div>

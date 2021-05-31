@@ -21,7 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
+import {ChartModule} from "angular2-chartjs";
 import { AppComponent } from './app.component';
 import { LoginComponent } from '../app/modules/login/component/login-page/login.component';
 import { HomeComponent } from './modules/home/components/users/home.component';
@@ -32,6 +32,9 @@ import { AuthguardService } from './authguard.service';
 import { TodoModule } from './modules/todo/todo.module';
 import { PhotosModule } from './modules/photos/photos.module';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { ChartComponent } from './modules/chart/components/chart/chart.component';
+
+
 @NgModule({
 
   declarations: [
@@ -41,7 +44,9 @@ import { TokenInterceptorService } from './token-interceptor.service';
     HomeComponent,    
     GeocolorDirective,
     EditUserComponent,
-    DialogBoxComponent ,
+    DialogBoxComponent,
+    ChartComponent,
+    
     
   ],
   imports: [
@@ -68,7 +73,8 @@ import { TokenInterceptorService } from './token-interceptor.service';
     MatSidenavModule,
     MatPaginatorModule,
     TodoModule,
-    PhotosModule
+    PhotosModule,
+    ChartModule
   ],
   exports:[
     MatSortModule

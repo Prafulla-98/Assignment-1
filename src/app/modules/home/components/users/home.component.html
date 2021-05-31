@@ -142,29 +142,14 @@
       </ng-template>    
         <app-photos></app-photos>
     </mat-tab>
-    <!-- <table class="users">
-        <tr class="headers">
-            <th>Id</th>
-            <td>{{users.id}}</td>
-            <th>Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Street</th>
-            <th>Suite</th>
-            <th>City</th>
-            <th>Zipcode</th>
-            <th>Lat</th>
-            <th>Long</th>
-            <th>Phone</th>
-            <th>Website</th>
-            <th>Company Name</th>
-            <th>Catch Phrase</th>
-            <th>BS</th>
-            <th></th>
-        </tr>
-        <tr (edit)="edit($event)" app-user *ngFor="let user of (users$ | async)" [user]="user">
-        </tr>
-    </table> -->
+    
+    <mat-tab label="Charts">  
+      <ng-template mat-tab-label>
+        <mat-icon>photo_library</mat-icon>
+        <span>Charts</span>
+      </ng-template>    
+        <app-chart></app-chart>
+    </mat-tab>
   </mat-tab-group>
  
 </div>

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { PhotosComponent } from './components/photos/photos.component';
 
 
-
 @NgModule({
   declarations: [
     PhotosComponent

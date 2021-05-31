@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { PostsModule } from './modules/posts/posts.module';
 import { AlbumsModule } from './modules/albums/albums.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,6 +31,7 @@ import { EditUserComponent } from './modules/home/components/edit-user/edit-user
 import { AuthguardService } from './authguard.service';
 import { TodoModule } from './modules/todo/todo.module';
 import { PhotosModule } from './modules/photos/photos.module';
+import { TokenInterceptorService } from './token-interceptor.service';
 @NgModule({
 
   declarations: [
@@ -72,7 +73,12 @@ import { PhotosModule } from './modules/photos/photos.module';
   exports:[
     MatSortModule
   ],
-  providers: [AuthguardService],
+  providers: [AuthguardService,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

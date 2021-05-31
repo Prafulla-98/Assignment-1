@@ -30,6 +30,7 @@ import { EditUserComponent } from './modules/home/components/edit-user/edit-user
 
 import { AuthguardService } from './authguard.service';
 import { TodoModule } from './modules/todo/todo.module';
+import { PhotosModule } from './modules/photos/photos.module';
 @NgModule({
 
   declarations: [
@@ -65,7 +66,8 @@ import { TodoModule } from './modules/todo/todo.module';
     MatTabsModule,
     MatSidenavModule,
     MatPaginatorModule,
-    TodoModule
+    TodoModule,
+    PhotosModule
   ],
   exports:[
     MatSortModule

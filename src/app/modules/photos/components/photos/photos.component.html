@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        
+<div class="card" style="width: 18rem;" *ngFor="let photo of photos">
+    <a href="{{photo.url}}" title="click to see image">             
+        <img src="{{photo.thumbnailUrl}}" class="card-img-top" alt="image">
+    </a>
+    <div class="card-body">
+      <h3 class="card-title"><b>{{photo.title}}</b></h3>    
+      
+    </div>
+  </div>
+</div> </div> 

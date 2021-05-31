@@ -16,7 +16,7 @@ export class AlbumsComponent implements OnInit {
   albums: Album[];
   totalLength: number;
   page: number = 1;
- isLoading: boolean = false;
+  isLoading: boolean = false;
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {

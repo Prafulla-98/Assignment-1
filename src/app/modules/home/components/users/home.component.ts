@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ELEMENT_DATA : User[];
-  displayedColumns: string[] = ['Id','Name','Username','Email','Street','Suite','City','Zipcode','Latitude','Longitude','Phone','Website','Company Name', 'Catch Phrase','BS','Edit'];
+  displayedColumns: string[] = ['id','name','username','email','street','suite','city','zipcode','latitude','longitude','phone','website','companyName', 'catchPhrase','bs','Edit'];
   dataSource;
   //totalLength: number;
   page: number = 1;

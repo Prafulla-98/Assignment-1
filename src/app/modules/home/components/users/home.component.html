@@ -18,81 +18,81 @@
     <div *ngIf="isLoading"><mat-spinner></mat-spinner></div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 
-        <ng-container matColumnDef="Id">
+        <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
           <td mat-cell *matCellDef="let element"> {{element.id}} </td>
         </ng-container>
       
         
-        <ng-container matColumnDef="Name">
+        <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
           <td mat-cell *matCellDef="let element"> {{element.name}} </td>
         </ng-container>
       
         
-        <ng-container matColumnDef="Username">
+        <ng-container matColumnDef="username">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
           <td mat-cell *matCellDef="let element"> {{element.username}} </td>
         </ng-container>
       
         
-        <ng-container matColumnDef="Email">
+        <ng-container matColumnDef="email">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
           <td mat-cell *matCellDef="let element"> {{element.email}} </td>
         </ng-container>
       
 
-        <ng-container matColumnDef="Street">
+        <ng-container matColumnDef="street">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Street </th>
           <td mat-cell *matCellDef="let element"> {{element.address.street}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="Suite">
+        <ng-container matColumnDef="suite">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Suite </th>
           <td mat-cell *matCellDef="let element"> {{element.address.suite}} </td>
         </ng-container>
         
-        <ng-container matColumnDef="City">
+        <ng-container matColumnDef="city">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
           <td mat-cell *matCellDef="let element"> {{element.address.city}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="Zipcode">
+        <ng-container matColumnDef="zipcode">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Zipcode </th>
           <td mat-cell *matCellDef="let element"> {{element.address.zipcode}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="Latitude">
+        <ng-container matColumnDef="latitude">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Latitude </th>
           <td mat-cell *matCellDef="let element"> {{element.address.geo.lat}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="Longitude">
+        <ng-container matColumnDef="longitude">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Longitude </th>
           <td mat-cell *matCellDef="let element"> {{element.address.geo.lng}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="Phone">
+        <ng-container matColumnDef="phone">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
           <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="Website">
+        <ng-container matColumnDef="website">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Website </th>
           <td mat-cell *matCellDef="let element"> {{element.website}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="Company Name">
+        <ng-container matColumnDef="companyName">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Company Name </th>
           <td mat-cell *matCellDef="let element"> {{element.company.name}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="Catch Phrase">
+        <ng-container matColumnDef="catchPhrase">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Catch Phrase </th>
           <td mat-cell *matCellDef="let element"> {{element.company.catchPhrase}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="BS">
+        <ng-container matColumnDef="bs">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> BS </th>
           <td mat-cell *matCellDef="let element"> {{element.company.bs}} </td>
         </ng-container>

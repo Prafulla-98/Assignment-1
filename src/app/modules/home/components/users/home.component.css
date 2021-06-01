@@ -8,5 +8,18 @@ th, mat-paginator, mat-tab{
   }
   
   .buttons{
+    margin-top: 5px;
     float:right;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+  
+  .example-full-width {
+    width: 100%;
   }

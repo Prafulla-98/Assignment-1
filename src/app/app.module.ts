@@ -16,23 +16,25 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import { MatSortModule } from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
-import { DialogBoxComponent } from './modules/home/components/dialog-box/dialog-box.component';
+import {MatMenuModule} from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {ChartModule} from "angular2-chartjs";
+import { TodoModule } from './modules/todo/todo.module';
+import { PhotosModule } from './modules/photos/photos.module';
+
+import { DialogBoxComponent } from './modules/home/components/dialog-box/dialog-box.component';
 import { AppComponent } from './app.component';
 import { LoginComponent } from '../app/modules/login/component/login-page/login.component';
 import { HomeComponent } from './modules/home/components/users/home.component';
-import { GeocolorDirective } from '../app/modules/home/services/geocolor/geocolor.directive';
 import { EditUserComponent } from './modules/home/components/edit-user/edit-user.component';
+import { ChartComponent } from './modules/chart/components/chart/chart.component';
 
 import { AuthguardService } from './authguard.service';
-import { TodoModule } from './modules/todo/todo.module';
-import { PhotosModule } from './modules/photos/photos.module';
+import { GeocolorDirective } from '../app/modules/home/services/geocolor/geocolor.directive';
 import { TokenInterceptorService } from './token-interceptor.service';
-import { ChartComponent } from './modules/chart/components/chart/chart.component';
 
 
 @NgModule({
@@ -74,7 +76,8 @@ import { ChartComponent } from './modules/chart/components/chart/chart.component
     MatPaginatorModule,
     TodoModule,
     PhotosModule,
-    ChartModule
+    ChartModule,
+    MatMenuModule
   ],
   exports:[
     MatSortModule

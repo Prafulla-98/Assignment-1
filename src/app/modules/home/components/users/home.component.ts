@@ -8,6 +8,8 @@ import { EventEmitter } from '@angular/core';
 import { LoginService } from '../../../login/service/login.service';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { MessageService } from '../../services/messages/message.service';
 
 @Component({
   selector: 'app-home',
@@ -19,13 +21,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  
   ELEMENT_DATA : User[];
   displayedColumns: string[] = ['id','name','username','email','street','suite','city','zipcode','latitude','longitude','phone','website','companyName', 'catchPhrase','bs','Edit'];
   dataSource;
   //totalLength: number;
   page: number = 1;
 isLoading=true;
-  constructor( public router: Router, private service: UsersService, private login: LoginService) { 
+  constructor(private messageService: MessageService, public router: Router, private service: UsersService, private login: LoginService) { 
     
   }
 
@@ -67,5 +70,10 @@ isLoading=true;
   editData(value) {
     this.edit.emit(this.ELEMENT_DATA);
     this.router.navigateByUrl('/editUser', { state: { userData: value } });
+  }
+  
+  sendMessage(message){
+    this.messageService.sendMessage(message);
+    return false;
   }
 }

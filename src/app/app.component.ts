@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from './modules/home/services/messages/message.service';
 import { LoginService } from './modules/login/service/login.service';
-
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,18 +11,28 @@ import { LoginService } from './modules/login/service/login.service';
 })
 
 export class AppComponent implements OnInit{
-  message: string[];
+  messages: any[] = [];
+  subscription: Subscription;
   title = 'assignment';
-  noMessage="No messages";
+  
   
   constructor(private messageService: MessageService,public login: LoginService, private router: Router){
 
   }
   
 ngOnInit(): void{
-  this.messageService.receiveMessage().subscribe((d)=>{
-    this.message = d;
-  })
+  this.subscription=this.messageService.receiveMessage().subscribe((message)=>{
+    if(message){
+      this.messages.push(message);
+    }
+    else{
+      this.messages=[];
+    }
+  });  
+}
+
+ngOnDestroy(){
+  this.subscription.unsubscribe();
 }
 
   LogoutUser(){

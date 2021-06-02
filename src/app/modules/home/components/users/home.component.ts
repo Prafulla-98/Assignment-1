@@ -7,8 +7,7 @@ import { UsersService } from '../../../../modules/home/services/users/users.serv
 import { EventEmitter } from '@angular/core';
 import { LoginService } from '../../../login/service/login.service';
 import { MatSort } from '@angular/material/sort';
-import { MatPaginator } from '@angular/material/paginator';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { MatPaginator } from '@angular/material/paginator'; 
 import { MessageService } from '../../services/messages/message.service';
 
 @Component({
@@ -25,21 +24,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ELEMENT_DATA : User[];
   displayedColumns: string[] = ['id','name','username','email','street','suite','city','zipcode','latitude','longitude','phone','website','companyName', 'catchPhrase','bs','Edit'];
   dataSource;
-  //totalLength: number;
   page: number = 1;
-isLoading=true;
+  isLoading=true;
+  
   constructor(private messageService: MessageService, public router: Router, private service: UsersService, private login: LoginService) { 
     
   }
 
   ngOnInit() {
-    
     this.dataSource = new MatTableDataSource<User>(this.ELEMENT_DATA);
     this.getAllUsers();
-    
   }
+
   ngAfterViewInit(): void {
-    
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
@@ -48,11 +45,10 @@ isLoading=true;
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
   
- public getAllUsers(){
-  let resp = this.service.getUsers();
+  public getAllUsers(){
+    let resp = this.service.getUsers();
     resp.subscribe(users=>{this.dataSource.data=users as User[]; this.isLoading=false;});
- 
-}
+  }
 
   // LogoutUser(){
   //   localStorage.clear();
@@ -61,10 +57,8 @@ isLoading=true;
   // }
 
   addUser(value1)
-  {
-    
+  {    
     this.router.navigateByUrl('/editUser', { state: { userData: value1 } });
-
   }
 
   editData(value) {
